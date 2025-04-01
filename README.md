@@ -8,7 +8,15 @@ See also `questdb-rest` that provides the CLI this shell depends on:
 - GitHub: https://github.com/tddschn/questdb-rest
 - PyPI: https://pypi.org/project/questdb-rest/
 
-Screenshots:
+## Installation
+
+- Install rlwrap with your package manager, for Homebrew it's `brew install rlwrap`
+- `pipx install questdb-shell && qdb-cli gen-config`, edit the config if your db instance is not running on `localhost:9000` ([doc](https://github.com/tddschn/questdb-rest))
+- Clone this repo and copy `questdb-shell` to your `$PATH`
+
+Then run `questdb-shell` to start the shell, and test with `tables` query to see if it works.
+
+## Screenshots
 
 ![CleanShot-2025-03-31-18.00.21_base64.png](https://g.teddysc.me/tddschn/e5bb610d28e63f5f81ec2c5f70dbda3b/CleanShot-2025-03-31-18.00.21_base64.png?b)
 ![CleanShot-2025-03-31-18.10.16_base64.png](https://g.teddysc.me/tddschn/e5bb610d28e63f5f81ec2c5f70dbda3b/CleanShot-2025-03-31-18.10.16_base64.png?b)
