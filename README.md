@@ -24,3 +24,11 @@ Then run `questdb-shell` to start the shell, and test with `tables` query to see
 
 2nd screenshot shows autocompletion of both table names and SQL keywords. The `chhist_*` tables stores my chrome history dump for further analysis 🙃.
 
+
+## Demo (1 min)
+
+I use tab to trigger completion auggestions of table names and [SQL keywords](https://github.com/questdb/sql-grammar).
+
+Half way through the demo, I accidentally made a query that returned 10 million rows (the `equities_1d` table), and I had to `Control-Z` to put the process in the background (since it wasn't responding to `Control-C`) and killed it with `kill %1` 😊.
+
+https://www.youtube.com/watch?v=Z_36FI_DDDQ
