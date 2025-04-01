@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Check if questdb-cli is available
+if ! command -v questdb-cli &>/dev/null; then
+    echo "Error: questdb-cli is not installed or not in PATH"
+    echo "Please install questdb-cli first"
+    exit 1
+fi
+
+QUESTDB_TABLE_NAME_LIST_FILE=$(mktemp) # Create a temporary file and store its path in a variable
+# get list of table names for completion
+questdb-cli exec -q 'tables' | jq '.dataset[][1]' -r >"$QUESTDB_TABLE_NAME_LIST_FILE" # Redirect the output of your command to the tempfile
+
+# Use patient mode (-w -40) to prevent the prompt from potentially
+# flashing or appearing before the previous command's output is fully settled.
+# It tells rlwrap to wait 40ms after the last output before displaying
+# the "cooked" prompt, holding it back entirely until then.
+
+rlwrap \
+    --case-insensitive \
+    -f ~/.questdb-rest/questdb-keywords.txt \
+    -f "${QUESTDB_TABLE_NAME_LIST_FILE}" \
+    -H ~/.questdb-rest/rlwrap.history \
+    -r \
+    -R \
+    -S 'questdb > ' \
+    -pGreen \
+    -w -200 \
+    bash -c 'while read line; do questdb-cli exec --psql --query "${line}"; done' # -l ~/.questdb-rest/rlwrap.log \
