@@ -1,5 +1,6 @@
 # QuestDB Command Line Shell With Keyword and Table Name Auto-Completion
 
+Web Console is nice, but I miss the terminal -   
 Write up and demo: https://teddysc.me/blog/rlwrap-questdb-shell
 
 See also `questdb-rest` that provides the CLI this shell depends on:
