@@ -5,7 +5,6 @@ Write up and demo: https://teddysc.me/blog/rlwrap-questdb-shell
 
 See also `questdb-rest` that provides the CLI this shell depends on:
 - Write up and demo: https://teddysc.me/blog/questdb-rest
-- https://teddysc.me/blog/rlwrap-questdb-shell
 - GitHub: https://github.com/tddschn/questdb-rest
 - PyPI: https://pypi.org/project/questdb-rest/
 
